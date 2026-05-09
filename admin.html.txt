@@ -18,7 +18,7 @@ async function save() {
   await fetch("https://api.github.com/repos/makruhin799-eng/site/contents/content.json", {
     method: "PUT",
     headers: {
-"Authorization": "token ghp_ТВОЙ_ТОКЕН",
+"Authorization": "token ghp_site-admin",
       "Content-Type": "application/json"
     },
     body: JSON.stringify(content)
