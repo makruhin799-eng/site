@@ -1,0 +1,29 @@
+<h2>Админка</h2>
+
+<input id="title" placeholder="Заголовок"><br><br>
+<textarea id="text" placeholder="Текст"></textarea><br><br>
+
+<button onclick="save()">Сохранить</button>
+
+<script>
+async function save() {
+  const title = document.getElementById('title').value;
+  const text = document.getElementById('text').value;
+
+  const content = {
+    message: "update content",
+    content: btoa(JSON.stringify({ title, text })),
+  };
+
+  await fetch("https://api.github.com/repos/makruhin799-eng/site/contents/content.json", {
+    method: "PUT",
+    headers: {
+"Authorization": "token ghp_ТВОЙ_ТОКЕН",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(content)
+  });
+
+  alert("Сохранено!");
+}
+</script>
