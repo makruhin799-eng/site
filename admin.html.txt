@@ -24,6 +24,6 @@ async function save() {
     body: JSON.stringify(content)
   });
 
-  alert("Сохранено");
+  alert("Сохранено!");
 }
 </script>
